@@ -12,7 +12,7 @@ def create_dbengine(dbtype,host,username,password,dbname):
 	elif db == 'mysql':
 		engine_str = f"{db}+pymysql://{username}:{password}@{host}/{dbname}?charset=utf8mb4"
 	else:
-		raise EXCEPTION("Please pass propert database types. Currently supports only oracle, postgresql, mssql & mysql")
+		raise Exception("Please pass propert database types. Currently supports only oracle, postgresql, mssql & mysql")
 		return
 	engine = create_engine(engine_str)
 	return engine
